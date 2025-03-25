@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from 'next/font/google';
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
-
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "CapsuleX",
-  description: "Create digital time capsules to be opened at a future date.",
+  description: "Store memories and open them in the future",
 };
 
 export default function RootLayout({
@@ -17,11 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` ${inter.className} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={` ${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
