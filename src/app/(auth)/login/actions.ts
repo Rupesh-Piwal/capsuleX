@@ -1,7 +1,6 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
-import {redirect} from "next/navigation"
 import { z } from "zod";
 
 const schema = z.object({
@@ -22,7 +21,7 @@ export async function login(currentState: any, formData: FormData) {
     };
   }
 
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { error } = await supabase.auth.signInWithPassword({
     email: data.data.email,
@@ -34,6 +33,4 @@ export async function login(currentState: any, formData: FormData) {
       errors: { email: error.message, password: error.message },
     };
   }
-redirect("/dashboard")
-
 }
