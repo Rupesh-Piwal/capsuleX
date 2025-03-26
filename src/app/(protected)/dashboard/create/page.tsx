@@ -58,7 +58,7 @@ export default function CreateCapsulePage() {
     <div className="min-h-screen bg-gradient-to-br from-[#121212] via-[#1E1E1E] to-[#0A0A0A] flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-xl">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-white tracking-tight mb-4 background-animate bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold text-white tracking-tight mb-4 background-animate bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] bg-clip-text ">
             Create Time Capsule
           </h1>
           <p className="text-lg text-gray-400 max-w-md mx-auto">
