@@ -53,7 +53,7 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col gap-8 mb-12">
           <div className="flex flex-col gap-3 text-center">
-            <h1 className="text-4xl font-bold tracking-tight background-animate bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold tracking-tight background-animate bg-gradient-to-r from-[#9333EA] via-[#3B82F6] to-[#9333EA] bg-clip-text text-transparent">
               Your Time Capsules
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -77,7 +77,7 @@ export default function DashboardPage() {
                       variant={capsule.isLocked ? "secondary" : "default"}
                       className={`ml-2 shrink-0 ${
                         !capsule.isLocked
-                          ? "bg-[#6EE7B7]/20 text-[#6EE7B7] hover:bg-[#6EE7B7]/30"
+                          ? "bg-[#9333EA]/20 text-[#9333EA] hover:bg-[#9333EA]/30"
                           : "bg-[#3B82F6]/20 text-[#3B82F6] hover:bg-[#3B82F6]/30"
                       }`}
                     >
@@ -90,7 +90,7 @@ export default function DashboardPage() {
                 </CardHeader>
                 <CardContent className="px-6 pb-0 pt-4 flex-grow">
                   <div className="flex items-center text-sm text-gray-400">
-                    <Clock className="mr-1.5 h-4 w-4 shrink-0 text-[#6EE7B7]" />
+                    <Clock className="mr-1.5 h-4 w-4 shrink-0 text-[#9333EA]" />
                     {capsule.isLocked ? (
                       <span>
                         Unlocks on{" "}
@@ -109,7 +109,7 @@ export default function DashboardPage() {
                     variant={capsule.isLocked ? "secondary" : "default"}
                     className={`w-full ${
                       !capsule.isLocked
-                        ? "bg-[#6EE7B7] hover:bg-[#6EE7B7]/90"
+                        ? "bg-[#9333EA] hover:bg-[#9333EA]/90"
                         : "bg-[#3B82F6] hover:bg-[#3B82F6]/90"
                     } text-white transition-colors duration-300`}
                     asChild
@@ -146,7 +146,7 @@ export default function DashboardPage() {
                 </div>
                 <Button
                   asChild
-                  className="bg-[#3B82F6] hover:bg-[#6EE7B7] text-white transition-colors duration-300"
+                  className="bg-[#9333EA] hover:bg-[#9333EA]/90 text-white transition-colors duration-300"
                 >
                   <Link href="/dashboard/create">Create Capsule</Link>
                 </Button>
@@ -159,7 +159,7 @@ export default function DashboardPage() {
         <div className="fixed bottom-6 right-6 md:hidden">
           <Button
             size="lg"
-            className="h-14 w-14 rounded-full shadow-lg bg-[#3B82F6] hover:bg-[#6EE7B7] text-white transition-colors duration-300"
+            className="h-14 w-14 rounded-full shadow-lg bg-[#9333EA] hover:bg-[#9333EA]/90 text-white transition-colors duration-300"
             asChild
           >
             <Link href="/dashboard/create">

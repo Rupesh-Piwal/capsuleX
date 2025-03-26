@@ -58,7 +58,7 @@ export default function CreateCapsulePage() {
     <div className="min-h-screen bg-gradient-to-br from-[#121212] via-[#1E1E1E] to-[#0A0A0A] flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-xl">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-white tracking-tight mb-4 background-animate bg-gradient-to-r from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] bg-clip-text ">
+          <h1 className="text-4xl font-bold text-white tracking-tight mb-4 background-animate bg-gradient-to-r from-[#9333EA] via-[#3B82F6] to-[#9333EA] bg-clip-text ">
             Create Time Capsule
           </h1>
           <p className="text-lg text-gray-400 max-w-md mx-auto">
@@ -86,7 +86,7 @@ export default function CreateCapsulePage() {
                   id="title"
                   placeholder="My Time Capsule"
                   required
-                  className="bg-[#2A2A2A] border-gray-700 text-white placeholder-gray-500 focus:ring-2 focus:ring-[#3B82F6]/50 focus:border-[#3B82F6] transition-all duration-300"
+                  className="bg-[#2A2A2A] border-gray-700 text-white placeholder-gray-500 focus:ring-2 focus:ring-[#9333EA]/50 focus:border-[#9333EA] transition-all duration-300"
                 />
               </div>
 
@@ -97,7 +97,7 @@ export default function CreateCapsulePage() {
                 <Textarea
                   id="message"
                   placeholder="Write a heartfelt message to your future self..."
-                  className="min-h-[150px] bg-[#2A2A2A] border-gray-700 text-white placeholder-gray-500 focus:ring-2 focus:ring-[#3B82F6]/50 focus:border-[#3B82F6] transition-all duration-300 resize-none"
+                  className="min-h-[150px] bg-[#2A2A2A] border-gray-700 text-white placeholder-gray-500 focus:ring-2 focus:ring-[#9333EA]/50 focus:border-[#9333EA] transition-all duration-300 resize-none"
                   required
                 />
               </div>
@@ -109,9 +109,9 @@ export default function CreateCapsulePage() {
                 <div className="mt-2">
                   {!selectedFile ? (
                     <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-700 p-8 text-center bg-[#2A2A2A]/30 hover:bg-[#2A2A2A]/50 transition-all duration-300 ease-in-out">
-                      <Upload className="mb-3 h-10 w-10 text-[#6EE7B7]" />
+                      <Upload className="mb-3 h-10 w-10 text-[#9333EA]" />
                       <div className="mb-2 text-sm font-medium text-gray-300">
-                        <span className="text-[#3B82F6] hover:text-[#6EE7B7]">
+                        <span className="text-[#9333EA] hover:text-[#9333EA]/90">
                           Click to upload
                         </span>{" "}
                         or drag and drop
@@ -128,7 +128,7 @@ export default function CreateCapsulePage() {
                       <Button
                         type="button"
                         variant="outline"
-                        className="text-[#3B82F6] border-gray-700 bg-transparent hover:bg-[#3B82F6]/10 hover:border-[#3B82F6] transition-all duration-300"
+                        className="text-[#9333EA] border-gray-700 bg-transparent hover:bg-[#9333EA]/10 hover:border-[#9333EA] transition-all duration-300"
                         onClick={() => document.getElementById("file")?.click()}
                       >
                         Select File
@@ -137,8 +137,8 @@ export default function CreateCapsulePage() {
                   ) : (
                     <div className="flex items-center justify-between rounded-lg border border-gray-700 p-4 bg-[#2A2A2A] shadow-md">
                       <div className="flex items-center space-x-4">
-                        <div className="rounded-md bg-[#3B82F6]/20 p-3">
-                          <File className="h-8 w-8 text-[#3B82F6]" />
+                        <div className="rounded-md bg-[#9333EA]/20 p-3">
+                          <File className="h-8 w-8 text-[#9333EA]" />
                         </div>
                         <div>
                           <p className="text-sm font-medium text-white">
@@ -175,11 +175,11 @@ export default function CreateCapsulePage() {
                     <Button
                       variant="outline"
                       className={cn(
-                        "w-full justify-start text-left font-normal bg-[#2A2A2A] border-gray-700 text-white hover:border-[#3B82F6] transition-all duration-300",
+                        "w-full justify-start text-left font-normal bg-[#2A2A2A] border-gray-700 text-white hover:border-[#9333EA] transition-all duration-300",
                         !date && "text-gray-500"
                       )}
                     >
-                      <CalendarIcon className="mr-2 h-5 w-5 text-[#6EE7B7]" />
+                      <CalendarIcon className="mr-2 h-5 w-5 text-[#9333EA]" />
                       {date
                         ? format(date, "PPP")
                         : "Choose your capsule's future date"}
@@ -203,7 +203,7 @@ export default function CreateCapsulePage() {
                   id="public"
                   checked={isPublic}
                   onCheckedChange={setIsPublic}
-                  className="data-[state=checked]:bg-[#3B82F6] data-[state=unchecked]:bg-gray-700"
+                  className="data-[state=checked]:bg-[#9333EA] data-[state=unchecked]:bg-gray-700"
                 />
                 <Label htmlFor="public" className="text-gray-200">
                   Make this capsule public
@@ -219,7 +219,7 @@ export default function CreateCapsulePage() {
             <CardFooter className="flex flex-col space-y-2 border-t border-gray-800 p-6 bg-[#1A1A1A]/50">
               <Button
                 type="submit"
-                className="w-full bg-[#3B82F6] hover:bg-[#6EE7B7] text-white transition-colors duration-300 ease-in-out"
+                className="w-full bg-[#9333EA] hover:bg-[#9333EA]/90 text-white transition-colors duration-300 ease-in-out"
                 disabled={isLoading || !date}
               >
                 {isLoading ? "Creating Capsule..." : "Seal Your Memory"}

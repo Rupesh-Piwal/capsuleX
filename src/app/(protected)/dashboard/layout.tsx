@@ -14,7 +14,6 @@ import {
   LogOut,
   Menu,
   Plus,
-  Settings,
 } from "lucide-react";
 import {
   Sidebar,
@@ -52,7 +51,6 @@ export default function DashboardLayout({
     { name: "Dashboard", href: "/dashboard", icon: Home },
     { name: "My Capsules", href: "/dashboard/capsules", icon: Archive },
     { name: "Create Capsule", href: "/dashboard/create", icon: Plus },
-    { name: "Settings", href: "/dashboard/settings", icon: Settings },
   ];
 
   const MobileNav = () => (
