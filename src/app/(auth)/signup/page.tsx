@@ -1,137 +1,128 @@
 "use client";
 
-import { useState } from "react";
+import { useFormState } from "react-dom";
+import Link from "next/link";
+import { signup } from "./actions";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { User, Mail, Lock, Loader2 } from "lucide-react";
-import { signup } from "./actions"
+import { ArrowLeft } from "lucide-react";
 
 export default function SignUpPage() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [state, formAction] = useFormState(signup, null);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-cyan-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-xl shadow-lg">
-        <div className="flex flex-col items-center">
-          <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center mb-4">
-            <User className="h-6 w-6 text-indigo-600" />
-          </div>
-          <h1 className="text-2xl font-bold text-gray-900">Create an account</h1>
-          <p className="mt-2 text-sm text-gray-600">
-            Enter your details to get started
-          </p>
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-1 flex items-center justify-center relative">
+        <div className="absolute inset-0 gradient-bg -z-10"></div>
+        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-16 -left-16 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
 
-        <form action={signup} className="space-y-6">
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="name" className="text-gray-700">
-                Full Name
-              </Label>
-              <div className="relative mt-1">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-gray-400" />
-                </div>
-                <Input
-                  id="name"
-                  placeholder="John Doe"
-                  type="text"
-                  autoComplete="name"
-                  disabled={isLoading}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="pl-10 focus:ring-2 focus:ring-indigo-500"
-                />
+        <div className="w-full max-w-md px-4 py-8 animate-slide-up">
+          <Card className="glass-card border-0 shadow-lg">
+            <CardHeader className="space-y-1 pb-6">
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-2xl font-bold">
+                  Create an account
+                </CardTitle>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  asChild
+                  className="rounded-full"
+                >
+                  <Link href="/">
+                    <ArrowLeft className="h-4 w-4" />
+                    <span className="sr-only">Back to home</span>
+                  </Link>
+                </Button>
               </div>
-            </div>
+              <CardDescription>Sign up to access all features</CardDescription>
+            </CardHeader>
 
-            <div>
-              <Label htmlFor="email" className="text-gray-700">
-                Email
-              </Label>
-              <div className="relative mt-1">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-400" />
+            <form action={formAction}>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="hello@example.com"
+                    required
+                    className="bg-background/50"
+                  />
+                  {state?.errors.email && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {state.errors.email}
+                    </p>
+                  )}
                 </div>
-                <Input
-                  id="email"
-                  placeholder="name@example.com"
-                  type="email"
-                  autoCapitalize="none"
-                  autoComplete="email"
-                  autoCorrect="off"
-                  disabled={isLoading}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-            </div>
 
-            <div>
-              <Label htmlFor="password" className="text-gray-700">
-                Password
-              </Label>
-              <div className="relative mt-1">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
+                <div className="space-y-2">
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    id="password"
+                    name="password"
+                    type="password"
+                    required
+                    className="bg-background/50"
+                    placeholder="Create a password"
+                  />
+                  {state?.errors.password && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {state.errors.password}
+                    </p>
+                  )}
                 </div>
-                <Input
-                  id="password"
-                  placeholder="••••••••"
-                  type="password"
-                  autoComplete="new-password"
-                  disabled={isLoading}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-            </div>
-          </div>
 
-          <div className="flex items-center">
-            <input
-              id="terms"
-              name="terms"
-              type="checkbox"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              required
-            />
-            <label
-              htmlFor="terms"
-              className="ml-2 block text-sm text-gray-700"
-            >
-              I agree to the <a href="#" className="text-indigo-600 hover:text-indigo-500">Terms</a> and <a href="#" className="text-indigo-600 hover:text-indigo-500">Privacy Policy</a>
-            </label>
-          </div>
+                <div className="space-y-2">
+                  <Label htmlFor="confirmPassword">Confirm Password</Label>
+                  <Input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type="password"
+                    required
+                    className="bg-background/50"
+                    placeholder="Confirm your password"
+                  />
+                  {state?.errors.confirmPassword && (
+                    <p className="text-sm text-red-500 mt-1">
+                      {state.errors.confirmPassword}
+                    </p>
+                  )}
+                </div>
+              </CardContent>
 
-          <Button
-            type="submit"
-            disabled={isLoading}
-            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
-          >
-            {isLoading ? (
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            ) : (
-              <User className="mr-2 h-4 w-4" />
-            )}
-            Sign up
-          </Button>
-        </form>
+              <CardContent className="pt-0">
+                <Button type="submit" className="w-full">
+                  Sign Up
+                </Button>
 
-        <div className="text-center text-sm text-gray-500">
-          Already have an account?{" "}
-          <a
-            href="/login"
-            className="font-medium text-indigo-600 hover:text-indigo-500"
-          >
-            Sign in
-          </a>
+                <div className="relative my-6">
+                  <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t" />
+                  </div>
+                  <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">
+                      Already have an account?
+                    </span>
+                  </div>
+                </div>
+
+                <Button variant="outline" className="w-full" asChild>
+                  <Link href="/login">Sign In Instead</Link>
+                </Button>
+              </CardContent>
+            </form>
+          </Card>
         </div>
       </div>
     </div>
