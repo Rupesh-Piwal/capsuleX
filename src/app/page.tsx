@@ -13,7 +13,7 @@ export default function Home() {
         <section className="flex-1 flex flex-col items-center justify-center relative overflow-hidden text-center px-4">
           <div className="absolute inset-0  -z-10"></div>
           <div className="max-w-6xl py-20 md:py-32 animate-slide-up">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-[#1A2B4D]">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mt-6 mb-6 text-[#1A2B4D]">
               Preserve Today's Memories for{" "}
               <span className="bg-gradient-to-r from-[#2465E9] to-[#14B6A8] text-transparent bg-clip-text">
                 Tomorrow's Discovery
@@ -37,7 +37,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section id="how-it-works" className="py-20 px-4">
+        <section id="how-it-works" className="pb-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-4 text-[#1A2B4D]">
@@ -86,7 +86,7 @@ export default function Home() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-br from-[#3170EE] to-[#304EBA] border border-[#2465E9]/20 rounded-2xl p-8 md:p-12 flex flex-col items-center text-center">
+            <div className="bg-gradient-to-br from-[#3170EE] to-[#304EBA] border border-[#2465E9]/20 rounded-2xl p-8 md:px-12 md:py-16 flex flex-col items-center text-center">
               <h2 className="text-3xl font-bold mb-4 text-[#fafafa]">
                 Ready to Create Your First Time Capsule?
               </h2>
@@ -115,7 +115,8 @@ export default function Home() {
             </p>
           </Link>
           <div className="text-sm text-[#344256]">
-            © {new Date().getFullYear()} TimeCapsule. All rights reserved.
+            © {new Date().getFullYear()} Capsule
+            <span className="text-md">X</span>. All rights reserved.
           </div>
         </div>
       </footer>
