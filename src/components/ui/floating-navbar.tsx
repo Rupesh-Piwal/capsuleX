@@ -37,8 +37,11 @@ export const FloatingNav = ({
       >
         <Link href="/" className="flex items-center gap-1 md:gap-2">
           <CiTimer className="h-6 w-6" />
-          <p>
-            Capsule<span className="text-lg font-semibold">X</span>
+          <p className="text-[#1A2B4D]">
+            Capsule
+            <span className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#3170EE] to-[#304EBA]">
+              X
+            </span>
           </p>
         </Link>
         <div className="flex flex-row gap-3 md:gap-8">
@@ -56,7 +59,7 @@ export const FloatingNav = ({
           ))}
         </div>
         <Link
-          className="text-[#fafafa] bg-black py-2 px-3.5 md:px-6 rounded-3xl text-[14px]"
+          className="text-[#fafafa] bg-gradient-to-br from-[#3170EE] to-[#304EBA] py-2 px-3.5 md:px-6 rounded-3xl text-[14px]"
           href="/login"
         >
           Login
