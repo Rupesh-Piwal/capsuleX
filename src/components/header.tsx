@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
-import { MobileNavigation } from "../app/(protected)/dashboard/mobile-navigation";
 import { CiTimer } from "react-icons/ci";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-[#3170EE]/20 bg-[#F5F7FF] backdrop-blur-md px-4 md:px-6">
       <div className="flex items-center gap-2">
-        <MobileNavigation />
         <Link href="/dashboard" className="flex items-center gap-1 md:gap-2">
           <CiTimer className="h-6 w-6" />
           <p className="text-[#1A2B4D]">
