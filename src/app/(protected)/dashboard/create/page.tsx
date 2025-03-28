@@ -54,7 +54,7 @@ export default function CreateCapsulePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F7FF] items-center justify-center px-4 py-16">
+    <div className="min-h-screen w-full flex flex-col bg-[#F5F7FF] items-center justify-center px-4 py-16">
       <div className="w-full max-w-xl">
         <div className="mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1A2B4D]">

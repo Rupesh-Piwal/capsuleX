@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Clock, ArrowRight, Archive, Calendar, Shield } from "lucide-react";
+import { ArrowRight, Archive, Calendar, Shield } from "lucide-react";
 import { GridBackground } from "@/components/GridBackground";
 import { Navbar } from "@/components/Navbar";
 import { CiTimer } from "react-icons/ci";
